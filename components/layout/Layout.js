@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ThemeProvider } from '../../context/ThemeContext';
 {/**Components */}
-import Header from '../containers/header/Header';
+import Header from '../containers/header/header';
 {/** Estilos */}
 import styles from './Layout.module.scss';
 
