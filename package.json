@@ -6,9 +6,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@expo-google-fonts/limelight": "^0.2.3",
+    "@fontsource/inter": "^5.0.8",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "gray-matter": "^4.0.3",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2",
+    "sass": "^1.67.0"
   },
   "engines": {
     "node": ">=18"
