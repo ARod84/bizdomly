@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ThemeProvider } from '../../context/ThemeContext';
 {/**Components */}
-import Header from '../containers/header/header';
+import BrxHeader from '../containers/header/BrxHeader';
 {/** Estilos */}
 import styles from './Layout.module.scss';
 
@@ -28,7 +28,7 @@ export default function Layout({ children, home }) {
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <Header home={home} />
+        <BrxHeader home={home} />
         <main>{children}</main>
         {!home && (
           <div className={styles.backToHome}>

@@ -4,7 +4,7 @@ import styles from './header.module.scss';
 import utilStyles from '../../../styles/utils.module.scss';
 import ThemeToggleBtn from '../../elements/ThemeToggleBtn';
 
-const header = ({ home }) => {
+const BrxHeader = ({ home }) => {
 
   return (
     <header className={styles.header}>
@@ -44,4 +44,4 @@ const header = ({ home }) => {
   )
 }
 
-export default header;
+export default BrxHeader;
