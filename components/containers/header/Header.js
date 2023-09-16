@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './Header.module.scss';
+import styles from './header.module.scss';
 import utilStyles from '../../../styles/utils.module.scss';
 import ThemeToggleBtn from '../../elements/ThemeToggleBtn';
 
-const Header = ({ home }) => {
+const header = ({ home }) => {
 
   return (
     <header className={styles.header}>
@@ -44,4 +44,4 @@ const Header = ({ home }) => {
   )
 }
 
-export default Header;
+export default header;
