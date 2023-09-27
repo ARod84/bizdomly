@@ -1,12 +1,16 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { ThemeProvider } from '../../context/ThemeContext';
 {/**Components */}
-import BrxHeader from '../containers/header/BrxHeader';
+import AppHeader from '../containers/header/AppHeader';
+import AppFooter from '../containers/footer/AppFooter';
 {/** Estilos */}
 import styles from './Layout.module.scss';
+{/** Fonts */}
+import { Inter } from 'next/font/google';
 
-export const siteTitle = 'Bruixa Online Marketing';
+const inter = Inter({ subsets: ['latin'] });
+
+export const siteTitle = 'Bizdomly';
 export const siteDescription= 'Best web marketing tips for small business';
 
 export default function Layout({ children, home }) {
@@ -28,13 +32,11 @@ export default function Layout({ children, home }) {
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <BrxHeader home={home} />
-        <main>{children}</main>
-        {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">← Back to home</Link>
-          </div>
-        )}
+        <AppHeader home={home} />
+          <main className={`${home ? styles.home : styles.blog} ${inter.className}`}>
+            {children}
+          </main>
+        <AppFooter />
       </div>
     </ThemeProvider>
   );

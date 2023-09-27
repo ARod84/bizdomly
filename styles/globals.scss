@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Helvetica Neue, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   font-size: 18px;
 }
@@ -56,29 +56,6 @@ $purple-950: #3b0764;
   &.dark {
     background-color: $slate-950;
     color: $slate-100;
-  }
-}
-
-.toggle-button {
-  border-radius: 999px;
-  background-color: $purple-500;
-  padding: 0.75rem;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  margin: auto;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $purple-400;
-  }
-
-  .icon {
-    height: 1.75rem;
-    width: 1.75rem;
-    color: white;
   }
 }
 
