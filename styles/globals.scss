@@ -56,8 +56,7 @@ $blue: #19DAF7;
 :root {
   background-color: white;
   color: $slate-950;
-
-  &.dark {
+  &[data-theme='dark'] {
     background-color: $slate-950;
     color: $slate-100;
   }

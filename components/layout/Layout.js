@@ -1,4 +1,6 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useTheme } from 'next-themes';
 {/**Components */}
 import AppHeader from '../containers/header/AppHeader';
 import AppFooter from '../containers/footer/AppFooter';
@@ -13,10 +15,21 @@ export const siteTitle = 'Bizdomly';
 export const siteDescription= 'Best web marketing tips for small business';
 
 export default function Layout({ children, home }) {
+  const [mounted, setMounted] = useState();
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
     <>
       <AppHeader home={home} />
-      <div className={styles.container}>
+      <div className={`${styles.container} ${theme === 'dark' ? styles.dark : styles.light}`}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <meta

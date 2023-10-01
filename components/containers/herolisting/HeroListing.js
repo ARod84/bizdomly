@@ -27,7 +27,7 @@ const HeroListing = ({postsData}) => {
             author,
             excerpt
           }) => (
-            <li className={`${styles.listing_home__listItem} ${theme ? styles.dark : styles.light}`} key={id}>
+            <li className={`${styles.listing_home__listItem} ${theme === 'dark' ? styles.dark : styles.light}`} key={id}>
               <div className={styles.listing_home__titleBox}>
                 <span className={styles.cat_tag}>Category</span>
                 <Image src={`${image}`} alt='Mano tengo fe' width='100' height='100' />

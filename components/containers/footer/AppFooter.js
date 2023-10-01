@@ -15,7 +15,7 @@ const AppFooter = () => {
 
   return (
     <footer className={styles.footer_wrapper}>
-      <div className={`${styles.footer_links} ${theme ? styles.dark : styles.light}`}>
+      <div className={`${styles.footer_links} ${theme === 'dark' ? styles.dark : styles.light}`}>
         <Link href='/'>Privacy Policy</Link>
         <Link href='/'>Terms and conditions</Link>
         <Link href='/'>About</Link>

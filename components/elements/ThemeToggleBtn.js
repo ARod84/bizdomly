@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes'
 import styles from './TheToggleBtn.module.scss';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -5,20 +6,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const ThemeToggleBtn = () => {
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState();
+  const { theme, resolvedTheme, setTheme } = useTheme('dark');
 
   const toggleTheme = () => {
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+  }
 
-    setTheme('dark')
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
   }
 
   return (
     <button 
       aria-label='toggle dark mode'
       className={`${styles.toggle_button} 
-      ${theme ? styles.dark : styles.light}`} 
+      ${theme === 'dark' ? styles.dark : styles.light}`} 
       onClick={toggleTheme}>
-      {theme ? (
+      {theme === 'dark' ? (
         <FontAwesomeIcon icon={faMoon} />
       ):(
         <FontAwesomeIcon icon={faSun} />

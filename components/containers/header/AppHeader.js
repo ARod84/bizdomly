@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import styles from './AppHeader.module.scss';
@@ -14,10 +14,19 @@ const limelight = Limelight( {
 });
 
 const AppHeader = ({ home }) => {
+  const [mounted, setMounted] = useState();
   const { theme } = useTheme();
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
-    <header className={`${styles.header} ${theme ? styles.dark : styles.light}`} style={{ 'zIndex': 9999}}>
+    <header className={`${styles.header} ${theme === 'dark' ? styles.dark : styles.light}`} style={{ 'zIndex': 9999}}>
       <div className={styles.container}>
             <h1 className={limelight.className}>{ siteTitle }</h1>
     
