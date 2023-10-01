@@ -6,6 +6,7 @@ import { getSortedPostsData } from '../lib/posts';
 import HeroBox from '../components/containers/herobox/HeroBox';
 import HeroListing from '../components/containers/herolisting/HeroListing';
 import HeroCard from '../components/containers/herocard/HeroCard';
+import CoursesListing from '../components/containers/courseslisting/CoursesListing';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -25,6 +26,7 @@ export default function Home({ allPostsData }) {
       <HeroBox postsData={allPostsData} />
       <HeroCard />
       <HeroListing postsData={allPostsData} />
+      <CoursesListing />
     </Layout>
   );
 }

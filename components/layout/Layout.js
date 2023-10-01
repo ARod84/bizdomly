@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { ThemeProvider } from '../../context/ThemeContext';
 {/**Components */}
 import AppHeader from '../containers/header/AppHeader';
 import AppFooter from '../containers/footer/AppFooter';
@@ -15,7 +14,8 @@ export const siteDescription= 'Best web marketing tips for small business';
 
 export default function Layout({ children, home }) {
   return (
-    <ThemeProvider>
+    <>
+      <AppHeader home={home} />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -32,12 +32,11 @@ export default function Layout({ children, home }) {
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <AppHeader home={home} />
           <main className={`${home ? styles.home : styles.blog} ${inter.className}`}>
             {children}
           </main>
         <AppFooter />
       </div>
-    </ThemeProvider>
+    </>
   );
 }

@@ -1,25 +1,31 @@
 @import '../../../styles/variables.module.scss';
 
-
-.card_wrapper {
-    background-color: $fucsia-100;
-    max-height: 500px;
-    border-radius: 5px;
+.courses_listing {
+    width: 100%;
+    max-width: 420px;
+    background-color: #E5E5E5;
+    position: sticky;
+    margin-left: 5.5vw;
+    right: 59.75px;
     padding: 24px;
-    position: relative;
+    border-radius: 5px;
     &.dark {
-        background-color: $fucsia-400;
-        color: $slate-950;
+        background-color: $purple-900;
+        color: $slate-100;
     }
 }
 
-.card_listing__title {
-    margin: 0;
-    font-size: 1.15rem;
+.courses_listing__item {
+    margin-bottom: 0.75rem;
 }
 
-.card_underline {
-    background: 
+.courses_listing__title {
+    margin: 0;
+    font-size: .95rem;
+}
+
+.courses_listing__underline {
+    background:
     linear-gradient(to right, rgba(216, 180, 254, 1), rgba(216, 180, 254, 1)),
     linear-gradient(to right, rgba(25, 218, 247, 1), rgba(168, 85, 247, 1),rgba(126, 34, 206, 1));
     background-size: 100% 0.1em, 0 0.1em;
@@ -28,12 +34,12 @@
     transition: background-size 400ms;
 }
 
-.card_underline:hover {
+.courses_listing__underline:hover {
     background-size: 0 0.1em, 100% 0.1em;
     cursor: pointer;
 }
 
-.card_listing__text {
-    margin: 0.25rem 0;
-    font-size: 0.95rem;
+.courses_listing__text {
+    margin: 0;
+    font-size: 0.75rem;
 }

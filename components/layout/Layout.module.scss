@@ -1,12 +1,12 @@
 .container {
     max-width: 72rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    padding: 0;
+    margin: 3rem auto 0;
 }
   
 .home {
     display: grid;
     grid-template-columns: 66.66% 33.33%;
-    grid-template-rows: 75% 25%;
-    max-height: 80vh;
+    grid-template-rows: auto;
+    gap: 1.66rem;
 }

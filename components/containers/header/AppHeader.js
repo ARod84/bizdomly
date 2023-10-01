@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 import styles from './AppHeader.module.scss';
 import { siteTitle } from '../../layout/Layout';
-import utilStyles from '../../../styles/utils.module.scss';
 import ThemeToggleBtn from '../../elements/ThemeToggleBtn';
 import { Limelight } from 'next/font/google';
 
@@ -14,43 +14,25 @@ const limelight = Limelight( {
 });
 
 const AppHeader = ({ home }) => {
+  const { theme } = useTheme();
 
   return (
-    <header className={styles.header}>
-        {home ? (
-          <>
+    <header className={`${styles.header} ${theme ? styles.dark : styles.light}`} style={{ 'zIndex': 9999}}>
+      <div className={styles.container}>
             <h1 className={limelight.className}>{ siteTitle }</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/mano-tengo-fe.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                meqll
-              </Link>
-            </h2>
-          </>
-        )}
-        <div className={styles.header_links}>
+    
+        <div className={`${styles.header_links}`}>
           <ThemeToggleBtn />
           <Link href='/'>
             Insights
           </Link>
           <Link href='/'>
-            Courses
+            News
           </Link>
           <Link href='/'>
-            Become
+            Become a Business Owner
           </Link>
+        </div>
         </div>
       </header>
   )

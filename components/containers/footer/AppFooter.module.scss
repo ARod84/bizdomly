@@ -1,0 +1,60 @@
+@import '../../../styles/variables.module.scss';
+
+.footer_wrapper {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer_links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.footer_links a {
+    color: $slate-950;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer_links.light a::after {
+    content: "";
+    background-color: $purple-600;
+    width: 5px;
+    height: 1rem;
+    position: absolute;
+    top: 5px;
+}
+
+.footer_links.dark a {
+    color: $slate-100;
+}
+
+.footer_links.dark a::after {
+    content: "";
+    background-color: $fucsia-500;
+    width: 5px;
+    height: 1rem;
+    position: absolute;
+    top: 5px;
+}
+
+.footer_links a:hover {
+    text-decoration: none;
+    &::after {
+        background-color: $purple-700;
+    }
+}
+
+.foot {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+}
+
+.foot_logo {
+    font-size: 1rem;
+}

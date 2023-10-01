@@ -1,0 +1,86 @@
+@import '../../../styles/variables.module.scss';
+
+.listing_home__list {
+    padding-left: 179.75px;
+    list-style-type: none;
+}
+
+.listing_home__listItem {
+    display: block;
+    margin-bottom: 1.66rem;
+}
+
+.listing_home__titleBox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    column-gap: 12px;
+}
+
+.listing_home__titleBox img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.listing_home__text p {
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+}
+
+.listing_home__title {
+    color: $slate-950;
+    background:
+    linear-gradient(to right, rgba(216, 180, 254, 1), rgba(216, 180, 254, 1)),
+    linear-gradient(to right, rgba(25, 218, 247, 1), rgba(168, 85, 247, 1),rgba(126, 34, 206, 1));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.dark .listing_home__title {
+    color: $slate-100;
+}
+
+.listing_home__title:hover {
+    text-decoration: none;
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+.listing_home__dataBox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.listing_home__dataBox p {
+    font-size: 0.65rem;
+    line-height: 1em;
+}
+
+.listing_home__author {
+    margin: 0 1rem 0 0;
+    background-color: $slate-600;
+    color: #ffffff;
+    padding: .25rem .5rem;
+    border-radius: 5px;
+    text-transform: capitalize;
+    letter-spacing: 0.75px;
+}
+
+.listing_home__date {
+    margin: 0 1rem 0 0;
+    padding: .25rem .5rem;
+}
+
+.cat_tag {
+    transform: rotate(270deg);
+    align-self: center;
+    text-transform: uppercase;
+    letter-spacing: .65px;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 0, 180, 1);
+}

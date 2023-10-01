@@ -14,9 +14,14 @@ const HeroBox = () => {
       <div className={styles.overlay}></div>
       <div className={styles.hero_inner}>
         <img src='/images/hero.jpg' alt='Hero image' />
-        <h1 className={limelight.className}>Latest Insigths from Our Techies</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris diam ante, 
-          imperdiet at feugiat id, iaculis nec nibh. Donec eget massa feugiat.</p>
+        <div className={styles.hero_text}>
+          <span className={styles.hero_tag}>Category tag</span>
+          <h1 className={limelight.className}>
+            <span className={styles.hero_underline}>Latest Insigths from Our Techies</span>
+          </h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris diam ante, 
+            imperdiet at feugiat id, iaculis nec nibh. Donec eget massa feugiat.</p>
+        </div>
       </div>
     </section>
   )
