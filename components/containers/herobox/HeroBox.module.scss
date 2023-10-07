@@ -1,6 +1,9 @@
+@import '../../../styles/variables.module.scss';
+
 .hero_wrapper {
     max-height: 100%;
     position: relative;
+    grid-area: heroBox;
 }
 
 .hero_inner img {
@@ -58,4 +61,26 @@
     text-transform: uppercase;
     padding: 0.25rem 0.55rem;
     border-radius: 2.5px;
+}
+
+@media (max-width: $breakpoint-desktop) {
+    .hero_text {
+        left: 2.5rem;
+        bottom: 4.66rem;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .hero_wrapper {
+        margin: 0 16px;
+    }
+    .hero_inner h1 {
+        font-size: 1.66rem;
+    }
+    .hero_text {
+        left: 1rem;
+        right: 1rem;
+        bottom: 2.66rem;
+    }
 }

@@ -7,6 +7,7 @@
     border-radius: 5px;
     padding: 24px;
     position: relative;
+    grid-area: heroCard;
     &.dark {
         background-color: $fucsia-400;
         color: $slate-950;
@@ -36,4 +37,27 @@
 .card_listing__text {
     margin: 0.25rem 0;
     font-size: 0.95rem;
+}
+
+@media (max-width: $breakpoint-desktop) {
+    .card_wrapper {
+        margin: 0 1rem;
+        padding: 16px;
+    }
+    .card_title {
+        margin: 0 0 .5rem 0;
+        line-height: 1.25em;
+        font-size: 1.25rem;
+    }
+    .card_listing__title {
+        font-size: 1rem;
+        line-height: 1em;
+    }
+    .card_listing__text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    
 }

@@ -24,7 +24,7 @@ const CoursesListing = () => {
 
   return (
     <div className={`${styles.courses_listing} ${theme === 'dark' ? styles.dark : styles.light}`}>
-        <h2 className={limelight.className}>
+        <h2 className={`${limelight.className} ${styles.courses_title}`}>
             Courses Listing
         </h2>
         <div className={styles.courses_listing__item}>

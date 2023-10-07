@@ -28,9 +28,9 @@ const ThemeToggleBtn = () => {
       ${theme === 'dark' ? styles.dark : styles.light}`} 
       onClick={toggleTheme}>
       {theme === 'dark' ? (
-        <FontAwesomeIcon icon={faMoon} />
-      ):(
         <FontAwesomeIcon icon={faSun} />
+      ):(
+        <FontAwesomeIcon icon={faMoon} />
       )}
     </button>
   )

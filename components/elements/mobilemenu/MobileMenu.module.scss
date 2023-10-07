@@ -1,0 +1,56 @@
+@import '../../../styles/variables.module.scss';
+
+.menu_button {
+    font-size: 1.55rem;
+    display: none;
+    &.dark {
+        color: $slate-100;
+    }
+    &.light {
+        color: $slate-950;
+    }
+}
+
+.menu_close {
+    font-size: 1.55rem;
+    color: $purple-300;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.menu_backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    /*animation: slide 0.55s ease;*/
+    &.dark {
+        background-color: $slate-950;
+        color: $slate-100;
+    }
+    &.light {
+        background-color: $slate-100;
+        color: $slate-950;
+    }
+    &.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: $breakpoint-desktop) {
+    .menu_button {
+        display: block;
+    }
+}
+
+@keyframes slide {
+    0% { left: 100%; top: 0; }
+    100% { left: 0; top: 0; }
+}
+

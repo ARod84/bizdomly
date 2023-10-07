@@ -16,7 +16,7 @@ const HeroListing = ({postsData}) => {
   const { theme } = useTheme();
   
   return (
-    <section className={`${styles.headingMd} ${styles.padding1px}`}>
+    <section className={`${styles.listing_home__wrapper}`}>
         <h2 className={limelight.className}>News Around the Web</h2>
         <ul className={styles.listing_home__list}>
           {postsData.map(({ 
@@ -29,13 +29,15 @@ const HeroListing = ({postsData}) => {
           }) => (
             <li className={`${styles.listing_home__listItem} ${theme === 'dark' ? styles.dark : styles.light}`} key={id}>
               <div className={styles.listing_home__titleBox}>
-                <span className={styles.cat_tag}>Category</span>
-                <Image src={`${image}`} alt='Mano tengo fe' width='100' height='100' />
+                <div className={styles.listing_home__imageWrapper}>
+                  <span className={styles.cat_tag}>Category</span>
+                  <Image src={`${image}`} alt='Mano tengo fe' width='100' height='100' />
+                </div>
                 <div className={styles.listing_home__text}>
                   <Link 
                     href={`/posts/${id}`} 
                     className={`${styles.listing_home__title} ${limelight.className}`}>
-                    {title}
+                      {title}
                   </Link>
                   <p>{excerpt}</p>
                 </div>

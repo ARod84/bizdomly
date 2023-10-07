@@ -58,3 +58,19 @@
 .foot_logo {
     font-size: 1rem;
 }
+
+@media (max-width: $breakpoint-desktop) {
+    .footer_wrapper {
+        padding: 1.5rem  2.5rem;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .footer_wrapper {
+        padding: 16px;
+        flex-direction: column;
+    }
+    .foot {
+        align-self: center;
+    }
+}

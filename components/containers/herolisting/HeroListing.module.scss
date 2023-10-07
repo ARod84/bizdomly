@@ -1,5 +1,11 @@
 @import '../../../styles/variables.module.scss';
 
+.listing_home__wrapper {
+    margin: 0;
+    padding: 0;
+    grid-area: heroListing;
+}
+
 .listing_home__list {
     padding-left: 179.75px;
     list-style-type: none;
@@ -8,6 +14,7 @@
 .listing_home__listItem {
     display: block;
     margin-bottom: 1.66rem;
+    width: 100%;
 }
 
 .listing_home__titleBox {
@@ -16,14 +23,11 @@
     width: 100%;
     align-items: flex-start;
     justify-content: flex-start;
-    column-gap: 12px;
+    position: relative;
 }
 
-.listing_home__titleBox img {
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 5px;
+.listing_home__text {
+    width: 80%;
 }
 
 .listing_home__text p {
@@ -31,7 +35,8 @@
     margin: 0.25rem 0;
 }
 
-.listing_home__title {
+a.listing_home__title {
+    font-size: 1.15rem;
     color: $slate-950;
     background:
     linear-gradient(to right, rgba(216, 180, 254, 1), rgba(216, 180, 254, 1)),
@@ -40,6 +45,7 @@
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 400ms;
+    margin: 0;
 }
 
 .dark .listing_home__title {
@@ -78,9 +84,68 @@
 
 .cat_tag {
     transform: rotate(270deg);
-    align-self: center;
+    position: absolute;
     text-transform: uppercase;
     letter-spacing: .65px;
     text-decoration: underline;
     text-decoration-color: rgba(255, 0, 180, 1);
+    left: -4rem;
+    top: 2rem;
+}
+
+.listing_home__imageWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.listing_home__imageWrapper img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+@media (max-width: $breakpoint-desktop) {
+    .listing_home__list {
+        padding-left: 0px;
+    }
+    .listing_home__wrapper {
+        padding: 0 2.5rem;
+    }
+    .listing_home__titleBox {
+        column-gap: 0;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .listing_home__wrapper {
+        padding: 0 1rem;
+    }
+    .listing_home__titleBox {
+        column-gap: 6px;
+        margin-bottom: 0.5rem;
+    }
+    .listing_home__imageWrapper {
+        justify-content: flex-start;
+        align-items: center;
+        width: 40%;
+    }
+    .listing_home__text {
+        width: 60%;
+    }    
+    .cat_tag {
+        left: -2rem;
+    }
+    .listing_home__imageWrapper img {
+        margin-left: 1.75rem;
+    }
+    .listing_home__title {
+        font-size: 1rem;
+        line-height: 1.1em;
+        margin: 0;
+    }
+    .listing_home__text p {
+        display: none;
+    }
 }

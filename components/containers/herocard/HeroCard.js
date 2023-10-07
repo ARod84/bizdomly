@@ -24,7 +24,7 @@ const HeroCard = () => {
 
   return (
     <section className={`${styles.card_wrapper} ${theme === 'dark' ? styles.dark : styles.light}`}>
-      <h2 className={limelight.className}>
+      <h2 className={`${limelight.className} ${styles.card_title}`}>
         Featured articles
       </h2>
       <article>
