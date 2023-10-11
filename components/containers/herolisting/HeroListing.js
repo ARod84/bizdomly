@@ -2,7 +2,8 @@ import styles from './HeroListing.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import Date from '../../Date';
+import Date from '../../elements/date/Date';
+import parse from 'html-react-parser';
 import { Limelight } from 'next/font/google';
 
 const limelight = Limelight( { 
@@ -12,39 +13,45 @@ const limelight = Limelight( {
   display: 'swap', 
 });
 
-const HeroListing = ({postsData}) => {
+const HeroListing = ({ postsData }) => {
   const { theme } = useTheme();
-  
+
   return (
     <section className={`${styles.listing_home__wrapper}`}>
         <h2 className={limelight.className}>News Around the Web</h2>
         <ul className={styles.listing_home__list}>
           {postsData.map(({ 
-            id, 
+            databaseId, 
             date, 
-            title, 
-            image, 
+            title,
+            uri,
+            excerpt,
             author,
-            excerpt
+            featuredImage
           }) => (
-            <li className={`${styles.listing_home__listItem} ${theme === 'dark' ? styles.dark : styles.light}`} key={id}>
+            <li className={`${styles.listing_home__listItem} ${theme === 'dark' ? styles.dark : styles.light}`} key={databaseId}>
               <div className={styles.listing_home__titleBox}>
                 <div className={styles.listing_home__imageWrapper}>
                   <span className={styles.cat_tag}>Category</span>
-                  <Image src={`${image}`} alt='Mano tengo fe' width='100' height='100' />
+                  <Image 
+                    src={featuredImage ? featuredImage?.node.sourceUrl : '/images/mano-tengo-fe.jpg'} 
+                    alt='Mano tengo fe' 
+                    width='100' 
+                    height='100' 
+                  />
                 </div>
                 <div className={styles.listing_home__text}>
                   <Link 
-                    href={`/posts/${id}`} 
+                    href={`/posts${uri}`} 
                     className={`${styles.listing_home__title} ${limelight.className}`}>
                       {title}
                   </Link>
-                  <p>{excerpt}</p>
+                  {parse(excerpt)}
                 </div>
               </div>
               <div className={styles.listing_home__dataBox}>
                 <p className={styles.listing_home__author}>
-                  {author}
+                  { `${author.node.firstName} ${author.node.lastName}` }
                 </p>
                 <p className={styles.listing_home__date}>
                   <Date dateString={date} />

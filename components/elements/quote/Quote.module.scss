@@ -1,0 +1,35 @@
+@import '../../../styles/variables.module.scss';
+
+.quote_wrapper {
+    padding: 2rem 2rem 0 0;
+}
+
+.quote {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4em;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.quote::before {
+    content: '"';
+    font-size: 106px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 0em;
+    color: $fucsia-500;
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .quote_wrapper {
+        padding: 2rem 24px 0 0;
+    }
+    .quote {
+        font-size: 0.75rem;
+    }
+    .quote::before {
+        font-size: 72px;
+    }
+}

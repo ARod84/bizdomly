@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.5",
     "@expo-google-fonts/limelight": "^0.2.3",
     "@fontsource/inter": "^5.0.8",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -15,6 +16,7 @@
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
+    "html-react-parser": "^4.2.2",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
