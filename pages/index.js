@@ -42,6 +42,34 @@ export async function getStaticProps() {
       }
     }
   `
+
+  const GET_INSIGHTS = gql`
+  query GetInsights {
+    insights(where: {featured: true}) {
+      nodes {
+        title
+        excerpt
+        uri
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        insightsACF {
+          tagline
+          featured
+        }
+      }
+    }
+  }
+  `
+
+  const responseIn = await client.query({
+    query: GET_INSIGHTS
+  })
+
+  const insights = responseIn?.data?.insights?.nodes
+
   const response = await client.query({
     query: GET_POSTS
   })
@@ -49,18 +77,22 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts
+      posts,
+      insights
     }
   }
 }
 
-export default function Home({ posts }) {
+export default function Home({ 
+  posts, 
+  insights 
+}) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <HeroBox postsData={posts} />
+      <HeroBox insights={insights} />
       <HeroCard />
       <HeroListing postsData={posts} />
       <CoursesListing />

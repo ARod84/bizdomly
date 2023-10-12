@@ -13,7 +13,12 @@ const PostTemplate = ({ postData }) => {
       </Head>
       <article className={styles.post_wrapper}>
         <div className={styles.header_wrapper}>
-          <Image src={postData?.featuredImage?.node.sourceUrl} width='300' height='225' className={styles.header_image} />
+          <Image
+            src={postData?.featuredImage ? postData?.featuredImage?.node.sourceUrl : '/images/mano-tengo-fe.jpg'} 
+            alt={postData?.title} 
+            width='300' height='225'
+            className={styles.header_image}
+          />
           <Quote />
         </div>
         <div className={styles.post_content}>
@@ -23,7 +28,9 @@ const PostTemplate = ({ postData }) => {
           </div>
           <div className={styles.post_content__art} dangerouslySetInnerHTML={{ __html: postData?.content }} />
         </div>
-        <Author author={postData?.author?.node.username} />
+        <Author 
+          author={postData.author} 
+        />
       </article>
     </>
   )

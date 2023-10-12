@@ -35,7 +35,7 @@ const HeroListing = ({ postsData }) => {
                   <span className={styles.cat_tag}>Category</span>
                   <Image 
                     src={featuredImage ? featuredImage?.node.sourceUrl : '/images/mano-tengo-fe.jpg'} 
-                    alt='Mano tengo fe' 
+                    alt={title} 
                     width='100' 
                     height='100' 
                   />

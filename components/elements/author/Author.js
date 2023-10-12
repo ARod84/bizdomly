@@ -5,10 +5,16 @@ const Author = ({ author }) => {
   return (
     <div className={styles.author_wrapper}>
         <div className={styles.author_text}>
-            <p>{author}</p>
+            <p>{`${author?.node.firstName} ${author?.node.lastName}`}</p>
             <small>Targaryen chad, problem maker and dragon rider</small>
         </div>
-        <Image src='/images/mano-tengo-fe.jpg' width='50' height='50' className={styles.avatar} />
+        <Image 
+          src='/images/mano-tengo-fe.jpg' 
+          width='50' 
+          height='50'
+          alt={`picture of ${author?.node.firstName} ${author?.node.lastName}`}
+          className={styles.avatar} 
+        />
     </div>
   )
 }

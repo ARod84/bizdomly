@@ -24,16 +24,15 @@ export async function getStaticProps({ params }) {
       featuredImage {
         node {
           sourceUrl
-          author {
-            node {
-              avatar {
-                url
-              }
-              firstName
-              lastName
-              username
-            }
+        }
+      }
+      author {
+        node {
+          avatar {
+            url
           }
+          firstName
+          lastName
         }
       }
     }
