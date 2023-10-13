@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import parse from 'html-react-parser';
 import styles from './HeroCard.module.scss';
 import { Limelight } from 'next/font/google';
 
@@ -10,7 +12,7 @@ const limelight = Limelight( {
   display: 'swap', 
 });
 
-const HeroCard = () => {
+const HeroCard = ({allInsights}) => {
   const [mounted, setMounted] = useState();
   const { theme } = useTheme();
 
@@ -27,30 +29,20 @@ const HeroCard = () => {
       <h2 className={`${limelight.className} ${styles.card_title}`}>
         Featured articles
       </h2>
-      <article>
-        <h3 className={`${styles.card_listing__title} ${limelight.className}`}>
-          <span className={styles.card_underline}>
-            Featured article 1
-          </span>
-        </h3>
-        <p className={styles.card_listing__text}>Lorem ipsum article stuff</p>
-      </article>
-      <article>
-        <h3 className={`${styles.card_listing__title} ${limelight.className}`}>
-          <span className={styles.card_underline}>
-            Featured article 2
-          </span>
-        </h3>
-        <p className={styles.card_listing__text}>Lorem ipsum article stuff</p>
-      </article>
-      <article>
-        <h3 className={`${styles.card_listing__title} ${limelight.className}`}>
-          <span className={styles.card_underline}>
-            Featured article 2
-          </span>
-        </h3>
-        <p className={styles.card_listing__text}>Lorem ipsum article stuff</p>
-      </article>
+      
+      {allInsights.map((ins) => (
+        <article key={ins.id}>
+          <Link href={`${ins.uri}`}>
+            {console.log(ins.uri)}
+          <h3 className={`${styles.card_listing__title} ${limelight.className}`}>
+            <span className={styles.card_underline}>
+              {ins.title}
+            </span>
+          </h3>
+          </Link>
+          <div className={styles.card_listing__text}>{parse(ins.excerpt.substring(0, 40)+ '...')}</div>
+        </article>
+      ))}
     </section>
   )
 }

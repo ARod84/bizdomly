@@ -1,4 +1,5 @@
 import { Limelight } from 'next/font/google';
+import Link from 'next/link';
 import styles from './HeroBox.module.scss';
 import parse from 'html-react-parser';
 
@@ -9,11 +10,14 @@ const limelight = Limelight( {
   display: 'swap', 
 });
 
-export default function HeroBox ({insights}) {
+export default function HeroBox ({ insights }) {
   
   const title   = insights[0].title;
-  const excerpt = insights[0].excerpt;
-  const tag = insights[0].insightsACF.tagline
+  const excerptLen = insights[0].excerpt;
+  const tag = insights[0].insightsACF.tagline;
+  const excerpt = excerptLen.substring(0, 140) + '...';
+  const uri = insights[0].uri;
+
   return (
     <section className={styles.hero_wrapper}>
       <div className={styles.overlay}></div>
@@ -21,9 +25,11 @@ export default function HeroBox ({insights}) {
         <img src='/images/hero.jpg' alt='Hero image' />
         <div className={styles.hero_text}>
           <span className={styles.hero_tag}>{tag}</span>
-          <h1 className={limelight.className}>
-            <span className={styles.hero_underline}>{title}</span>
-          </h1>
+          <Link href={`${uri}`}>
+            <h1 className={limelight.className}>
+              <span className={styles.hero_underline}>{title}</span>
+            </h1>
+          </Link>
           {parse(excerpt)}
         </div>
       </div>

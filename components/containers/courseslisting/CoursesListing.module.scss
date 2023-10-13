@@ -5,6 +5,7 @@
     max-width: 420px;
     background-color: #E5E5E5;
     position: sticky;
+    top: 21vh;
     margin-left: 5.5vw;
     right: 59.75px;
     padding: 24px;
@@ -20,7 +21,14 @@
     margin-bottom: 0.75rem;
 }
 
-.courses_listing__title {
+a .courses_listing__title {
+    color: $slate-950;
+    margin: 0;
+    font-size: .95rem;
+}
+
+.dark a .courses_listing__title {
+    color: $slate-100;
     margin: 0;
     font-size: .95rem;
 }

@@ -2,6 +2,7 @@ import { useState, useEffect, useSyncExternalStore } from 'react';
 import styles from './CoursesListing.module.scss';
 import { useTheme } from 'next-themes';
 import { Limelight } from 'next/font/google';
+import Link from 'next/link';
 
 const limelight = Limelight( { 
   weight: ['400'],
@@ -10,7 +11,7 @@ const limelight = Limelight( {
   display: 'swap', 
 });
 
-const CoursesListing = () => {
+const CoursesListing = ({courses}) => {
   const [mounted, setMounted] = useState();
   const {theme} = useTheme();
 
@@ -21,42 +22,26 @@ const CoursesListing = () => {
   if (!mounted) {
     return null
   }
-
+ console.log(courses)
   return (
     <div className={`${styles.courses_listing} ${theme === 'dark' ? styles.dark : styles.light}`}>
         <h2 className={`${limelight.className} ${styles.courses_title}`}>
             Courses Listing
         </h2>
-        <div className={styles.courses_listing__item}>
-            <h3 className={`${styles.courses_listing__title} ${limelight.className}`}>
-                <span className={styles.courses_listing__underline}>
-                    Holix title lorem stuff
-                </span>
-            </h3>
-            <p className={styles.courses_listing__text}>
-                But I must explain to you how all this mistaken idea of denouncing.
-            </p>
-        </div>
-        <div className={styles.courses_listing__item}>
-            <h3 className={`${styles.courses_listing__title} ${limelight.className}`}>
-                <span className={styles.courses_listing__underline}>
-                    Holix title lorem stuff
-                </span>
-            </h3>
-            <p className={styles.courses_listing__text}>
-                But I must explain to you how all this mistaken idea of denouncing.
-            </p>
-        </div>
-        <div className={styles.courses_listing__item}>
-            <h3 className={`${styles.courses_listing__title} ${limelight.className}`}>
-                <span className={styles.courses_listing__underline}>
-                    Holix title lorem stuff
-                </span>
-            </h3>
-            <p className={styles.courses_listing__text}>
-                But I must explain to you how all this mistaken idea of denouncing.
-            </p>
-        </div>
+        {courses.map((cr) => (
+            <div className={styles.courses_listing__item} key={cr.id}>
+                <Link href={`${cr.uri}`}>
+                    <h3 className={`${styles.courses_listing__title} ${limelight.className}`}>
+                        <span className={styles.courses_listing__underline}>
+                            {cr.title}
+                        </span>
+                    </h3>
+                </Link>
+                <div className={styles.courses_listing__text}>
+                    {cr.courseACF.shortDescription}
+                </div>
+            </div>
+        ))}
     </div>
   )
 }

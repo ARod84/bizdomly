@@ -28,9 +28,13 @@ const PostTemplate = ({ postData }) => {
           </div>
           <div className={styles.post_content__art} dangerouslySetInnerHTML={{ __html: postData?.content }} />
         </div>
-        <Author 
-          author={postData.author} 
-        />
+        {postData?.author ?
+          <Author 
+            author={postData?.author}
+          />
+          :
+          ''
+        }
       </article>
     </>
   )

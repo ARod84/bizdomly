@@ -63,29 +63,90 @@ export async function getStaticProps() {
     }
   }
   `
+  const GET_ALL_INSIGHTS = gql`
+    query GetAllInsights {
+      insights(first: 3) {
+        nodes {
+          content
+          date
+          excerpt
+          title
+          id
+          uri
+          insightsACF {
+            featured
+            tagline
+          }
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  `
+
+  const GET_ALL_COURSES = gql`
+    query GetAllCourses {
+      courses(first: 3) {
+        nodes {
+          content
+          date
+          excerpt
+          title
+          uri
+          id
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+          courseACF {
+            description
+            shortDescription
+          }
+        }
+      }
+    }
+  `
 
   const responseIn = await client.query({
     query: GET_INSIGHTS
   })
-
   const insights = responseIn?.data?.insights?.nodes
+
+  const responseAllIn = await client.query({
+    query: GET_ALL_INSIGHTS
+  })
+  const allInsights = responseAllIn?.data?.insights?.nodes
 
   const response = await client.query({
     query: GET_POSTS
   })
   const posts = response?.data?.posts?.nodes;
 
+  const coursesResponse = await client.query({
+    query: GET_ALL_COURSES
+  })
+
+  const courses = coursesResponse?.data?.courses?.nodes;
+
   return {
     props: {
       posts,
-      insights
+      insights,
+      allInsights,
+      courses
     }
   }
 }
 
 export default function Home({ 
   posts, 
-  insights 
+  insights,
+  allInsights,
+  courses
 }) {
   return (
     <Layout home>
@@ -93,9 +154,9 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <HeroBox insights={insights} />
-      <HeroCard />
+      <HeroCard allInsights={allInsights} />
       <HeroListing postsData={posts} />
-      <CoursesListing />
+      <CoursesListing courses={courses} />
     </Layout>
   );
 }
