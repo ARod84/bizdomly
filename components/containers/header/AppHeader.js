@@ -36,13 +36,13 @@ const AppHeader = ({ home }) => {
         </h1>
         <div className={`${styles.header_links}`}>
           <ThemeToggleBtn />
-          <Link href='/' className={styles.notMobile}>
+          <Link href='/insights' className={styles.notMobile}>
             Insights
           </Link>
-          <Link href='/' className={styles.notMobile}>
+          <Link href='/news' className={styles.notMobile}>
             News
           </Link>
-          <Link href='/' className={styles.notMobile}>
+          <Link href='/become' className={styles.notMobile}>
             Become a Business Owner
           </Link>
           <MobileMenu />

@@ -1,0 +1,240 @@
+@import '../styles/variables.module.scss';
+.page_wrapper {
+    display: grid;
+    grid-template-columns: 22% 75.2%;
+    grid-template-rows: auto;
+    grid-template-areas: "slider listing"
+                         "slider listing";
+                         gap: 2.55rem;
+    max-width: 72rem;
+}
+
+.bizslider {
+    grid-area: slider;
+}
+
+.article_listing {
+    grid-area: listing;
+    display: grid;
+    grid-template-columns: 32% 32% 31.5%;
+    grid-template-rows: 32% 32% 31.5%;
+    grid-template-areas: "main main first"
+                         "main main second"
+                         "thrd frth fth";
+    gap: 1rem;
+}
+
+.article_listing a {
+    color: $slate-100;
+}
+
+/* Main article */
+.main_article {
+    grid-area: main;
+    position: relative;
+}
+
+.main_article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.main_article h3 {
+    position: absolute;
+    z-index: 899;
+    padding: 2rem 3rem 2rem 2rem;
+    font-size: 2.25rem;
+    line-height: 1.25em;
+    bottom: 6rem;
+    line-height: 1.15em;
+}
+
+.main_article p {
+    font-size: .85rem;
+    bottom: 0;
+    position: absolute;
+    z-index: 899;
+    padding: 2rem 3rem 2rem 2rem;
+}
+
+/* First article */
+.fst_article {
+    grid-area: first;
+    position: relative;
+}
+
+.fst_article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.fst_article h3 {
+    position: absolute;
+    z-index: 899;
+    font-size: 1.25rem;
+    padding: 1rem;
+    line-height: 1.15em;
+    bottom: 0;
+}
+
+/* Second article */
+
+.scnd_article {
+    grid-area: second;
+    position: relative;
+}
+
+.scnd_article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.scnd_article h3 {
+    position: absolute;
+    font-size: 1.25rem;
+    padding: 1rem;
+    line-height: 1.15em;
+    z-index: 899;
+    bottom: 0;
+}
+
+/* Third article */
+.thrd_article {
+    grid-area: thrd;
+    position: relative;
+}
+
+.thrd_article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.thrd_article h3 {
+    position: absolute;
+    font-size: 1.25rem;
+    padding: 1rem;
+    line-height: 1.15em;
+    z-index: 899;
+    bottom: 0;
+}
+
+/* Fourth Article */
+.frth_article {
+    grid-area: frth;
+    position: relative;
+}
+
+.frth_article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.frth_article h3 {
+    position: absolute;
+    font-size: 1.25rem;
+    padding: 1rem;
+    line-height: 1.15em;
+    z-index: 899;
+    bottom: 0;
+}
+
+/* Fifth Article */
+.fth_article {
+    grid-area: fth;
+    position: relative;
+}
+
+.fth_article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.fth_article h3 {
+    position: absolute;
+    font-size: 1.25rem;
+    padding: 1rem;
+    line-height: 1.15em;
+    z-index: 899;
+    bottom: 0;
+}
+
+/* Slider */
+.slide_content {
+    padding: 0;
+    margin: 0;
+    height: 26.6vh;
+}
+
+.slide_content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slide_content h3 {
+    font-size: .95rem;
+    margin: 0.25rem 0 0 0;
+    line-height: 1.1em;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 555;
+}
+
+.cat_tag,
+.slide_content span {
+    font-size: .65rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    background-color: $purple-500;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.next {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.5rem;
+    left: -2rem;
+    top: 50%;
+    z-index: 888;
+}
+
+.prev {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.5rem;
+    left: -2rem;
+    top: 55%;
+    z-index: 888;
+}
+
+@media(max-width: $breakpoint-desktop) {
+    .page_wrapper {
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 74%;
+        grid-template-areas: "slider" 
+                            "listing";
+        gap: 0;
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+    .article_listing {
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: repeat(4, 24%);
+        grid-template-areas: "main main"
+                          "first second"
+                             "thrd frth"
+                             "fth fth";
+    }
+}
