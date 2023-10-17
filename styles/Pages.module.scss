@@ -7,6 +7,7 @@
                          "slider listing";
                          gap: 2.55rem;
     max-width: 72rem;
+    margin-bottom: 2rem;
 }
 
 .bizslider {
@@ -17,7 +18,7 @@
     grid-area: listing;
     display: grid;
     grid-template-columns: 32% 32% 31.5%;
-    grid-template-rows: 32% 32% 31.5%;
+    grid-template-rows: 30% 30% 31.5%;
     grid-template-areas: "main main first"
                          "main main second"
                          "thrd frth fth";
@@ -38,6 +39,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    max-height: 400px;
 }
 
 .main_article h3 {
@@ -68,6 +70,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    max-height: 189px;
 }
 
 .fst_article h3 {
@@ -90,6 +93,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    max-height: 189px;
 }
 
 .scnd_article h3 {
@@ -111,6 +115,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    max-height: 189px;
 }
 
 .thrd_article h3 {
@@ -132,6 +137,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    max-height: 189px;
 }
 
 .frth_article h3 {
@@ -152,6 +158,7 @@
 .fth_article img {
     width: 100%;
     height: auto;
+    max-height: 189px;
     object-fit: cover;
 }
 
@@ -168,13 +175,13 @@
 .slide_content {
     padding: 0;
     margin: 0;
-    height: 26.6vh;
 }
 
 .slide_content img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    max-height: 180px;
 }
 
 .slide_content h3 {

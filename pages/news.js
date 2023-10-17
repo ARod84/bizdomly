@@ -21,12 +21,18 @@ export async function getStaticProps() {
           date
           excerpt
           title
+          slug
           id
           uri
           featuredImage {
             node {
               sourceUrl,
               altText
+            }
+          }
+          categories {
+            nodes {
+              name
             }
           }
         }
@@ -104,128 +110,128 @@ const news = ({ allPosts }) => {
             <Slider {...settings} className={styles.bizslider}>
               {allPosts.map((ins, index) => (
                 index < 6 && 
-                  <Link key={ins.id}
+                  <Link key={`/news/${ins.uri}`}
                     className={styles.slide_content}
                     href={ins.uri}>
                     <Image 
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       width={200}
                       height={150}
                       alt={`${ins.featuredImage ? ins.featuredImage.node.altText : ''}`}
                       priority
                     />
-                    <h3>{ins.title} {/*ins.topics.nodes[0] ? <span>{ins.topics.nodes[0].name}</span> : ''*/}</h3>
+                    <h3>{ins.title} {ins.categories.nodes[0] ? <span>{ins.categories.nodes[0].name}</span> : ''}</h3>
                   </Link>
               ))}
             </Slider>
             <div className={styles.article_listing}>
                 {allPosts.map((ins, index) => (
                   index === 0 && 
-                  <Link  className={styles.main_article} key={ins.id} href={ins.uri}>
+                  <Link  className={styles.main_article} key={ins.id} href={`/news/${ins.uri}`}>
                     <div className={styles.overlay}></div>
                     <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       alt={`${ins.featuredImage ? ins.featuredImage.node.altText : ''}`}
                       fill={true}
                     />
                     <h3>
-                      {ins.title} {/*ins.topics.nodes[0] ? 
+                      {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
-                          {ins.topics.nodes[0].name}
+                          {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                        ''*/}
+                        ''}
                     </h3>
                     {parse(ins.excerpt)}
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
                   index === 1 && 
-                  <Link href={ins.uri} className={styles.fst_article} key={ins.id}>
+                  <Link href={`/news/${ins.uri}`} className={styles.fst_article} key={ins.id}>
                     <div className={styles.overlay}></div>
                     <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       fill={true}
                     />
                     <h3>
-                      {ins.title} {/*ins.topics.nodes[0] ? 
+                      {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
-                          {ins.topics.nodes[0].name}
+                          {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                        ''*/}
+                        ''}
                     </h3>
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
                   index === 2 && 
-                  <Link href={ins.uri} className={styles.scnd_article} key={ins.id}>
+                  <Link href={`/news/${ins.uri}`} className={styles.scnd_article} key={ins.id}>
                     <div className={styles.overlay}></div>
                     <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       fill={true}
                     />
                     <h3>
-                      {ins.title} {/*ins.topics.nodes[0] ? 
+                      {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
-                          {ins.topics.nodes[0].name}
+                          {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                ''*/}
+                ''}
                     </h3>
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
                   index === 3 && 
-                  <Link href={ins.uri} className={styles.thrd_article} key={ins.id}>
+                  <Link href={`/news/${ins.uri}`} className={styles.thrd_article} key={ins.id}>
                     <div className={styles.overlay}></div>
                     <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       fill={true}
                     />
                     <h3>
-                      {ins.title} {/*ins.topics.nodes[0] ? 
+                      {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
-                          {ins.topics.nodes[0].name}
+                          {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                ''*/}
+                ''}
                     </h3>
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
                   index === 4 && 
-                  <Link href={ins.uri} className={styles.frth_article} key={ins.id}>
+                  <Link href={`/news/${ins.uri}`} className={styles.frth_article} key={ins.id}>
                     <div className={styles.overlay}></div>
                     <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       fill={true}
                     />
                     <h3>
-                      {ins.title} {/*ins.topics.nodes[0] ? 
+                      {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
-                          {ins.topics.nodes[0].name}
+                          {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                ''*/}
+                ''}
                     </h3>
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
                   index === 5 && 
-                  <Link href={ins.uri} className={styles.fth_article} key={ins.id}>
+                  <Link href={`/news/${ins.uri}`} className={styles.fth_article} key={ins.id}>
                     <div className={styles.overlay}></div>
                     <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : ''}`}
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       fill={true}
                     />
                     <h3>
-                      {ins.title} {/*ins.topics.nodes[0] ? 
+                      {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
-                          {ins.topics.nodes[0].name}
+                          {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                ''*/}
+                ''}
                     </h3>
                   </Link>
                 ))}

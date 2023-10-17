@@ -22,7 +22,6 @@ const CoursesListing = ({courses}) => {
   if (!mounted) {
     return null
   }
- console.log(courses)
   return (
     <div className={`${styles.courses_listing} ${theme === 'dark' ? styles.dark : styles.light}`}>
         <h2 className={`${limelight.className} ${styles.courses_title}`}>

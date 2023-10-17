@@ -42,7 +42,7 @@ const HeroListing = ({ postsData }) => {
                 </div>
                 <div className={styles.listing_home__text}>
                   <Link 
-                    href={`/posts${uri}`} 
+                    href={`/news${uri}`} 
                     className={`${styles.listing_home__title} ${limelight.className}`}>
                       {title}
                   </Link>
