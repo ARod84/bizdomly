@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import styles from './PriceBox.module.scss'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const PriceBox = ({ 
     content,
@@ -36,14 +39,33 @@ const PriceBox = ({
             {`Apply for the ${content.courseACF.discount} discount`}
         </p>
       </div>
-      <div className={styles.pricebox_features}>
-        <h3>{content.courseACF.feature1}</h3>
-        <h3>{content.courseACF.feature2}</h3>
-        <h3>{content.courseACF.feature3}</h3>
-        <h3>{content.courseACF.feature4}</h3>
-        <h3>{content.courseACF.feature5}</h3>
-        <button className={styles.pricebox_cta}>Start now!</button>
-      </div>
+      <ul className={styles.pricebox_features}>
+        <li>
+          <FontAwesomeIcon icon={faCheck} /> 
+          {content.courseACF.feature1}
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCheck} /> 
+          {content.courseACF.feature2}
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCheck} />
+          {content.courseACF.feature3}
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCheck} />
+          {content.courseACF.feature4}
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faCheck} />
+          {content.courseACF.feature5}
+        </li>
+        <button className={styles.pricebox_cta__wrapper}>
+          <Link href='#'  className={styles.pricebox_cta__button}>
+            Start now!
+          </Link>
+        </button>
+      </ul>
     </article>
   )
 }

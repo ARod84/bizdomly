@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import Date from '../../elements/date/Date';
-import styles from './PostTemplate.module.scss';
-import Head from 'next/head';
-import Quote from '../../elements/quote/Quote';
-import Author from '../../elements/author/Author';
+import Image from 'next/image'
+import Date from '../../elements/date/Date'
+import styles from './PostTemplate.module.scss'
+import Head from 'next/head'
+import Quote from '../../elements/quote/Quote'
+import Author from '../../elements/author/Author'
 
 const PostTemplate = ({ postData }) => {
   return (

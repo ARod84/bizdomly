@@ -1,0 +1,94 @@
+@import '../../../styles/variables.module.scss';
+
+.landing_hero {
+    width: 100%;
+    height: 66vh;
+    background-image: url(../../../public/images/course-landing.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.landing_body {
+    max-width: 72em;
+    margin: 0 auto;
+}
+
+.infobox_text {
+    position: absolute;
+    background: $slate-900;
+    left: 17rem;
+    bottom: 22rem;
+    min-width: 38rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.infobox_text h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    margin: 0;
+    color: $slate-100;
+}
+
+.infobox_text__price {
+    display: flex;
+    justify-content: space-between;
+    width: 28%;
+    color: $fucsia-500;
+    font-weight: 500;
+}
+
+.infobox_text__price span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $slate-100;
+}
+
+.infobox_text__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.infobox_text__list li {
+    font-size: 0.85rem;
+    color: $slate-100;
+}
+
+.infobox_text__list li svg {
+    color: $fucsia-500;
+    margin-right: .35rem;
+}
+
+.infobox_addtocart {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid $fucsia-500;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    transition: all 800ms;
+    color: $slate-100;
+}
+
+.infobox_addtocart:hover {
+    background: $fucsia-500;
+    border: 2px solid $slate-500;
+}
+
+/* Landing Body */
+
+.landing_modules {
+    padding: 6rem 0;
+}
+
+.landing_modules h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 0;
+    color: $slate-100;
+    border-bottom: 2px solid $fucsia-500;
+}

@@ -71,6 +71,7 @@
 .pricebox_title__title {
     font-size: 1.5rem;
     font-weight: 900;
+    letter-spacing: 1px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -99,12 +100,62 @@
     background-color: rgba(255, 255, 255, 0.65);
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    margin: 0;
+    padding: 1rem;
 }
 
 .dark .pricebox_features {
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-.pricebox_features h3 {
-    margin: 0;
+.pricebox_features li {
+    margin: .5rem 0 .5rem 0;
+    padding: 0 0 .25rem 0;
+    list-style-type: none;
+    font-size: .9rem;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .pricebox_features li {
+    border-bottom: 1px solid $purple-900;
+}
+
+.pricebox_features li svg {
+    margin-right: 0.5rem;
+    color: $purple-600;
+}
+
+.pricebox_cta__wrapper {
+    background: $biz-gradient;
+    padding: 3px;
+    border: none;
+    border-radius: 40px;
+    transition: all 800ms;
+}
+
+.pricebox_cta__wrapper:hover {
+    background-size: 0 0.1em, 100% 0.1em;
+    cursor: pointer;
+}
+
+a.pricebox_cta__button {
+    color: $slate-100;
+}
+
+.pricebox_cta__button {
+    background: $slate-500;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 40px;
+    color: $slate-100;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    transition: all 800ms;
+}
+
+.pricebox_cta__button:hover {
+    background: transparent;
 }

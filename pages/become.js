@@ -9,12 +9,13 @@ export async function getStaticProps() {
   
   const GET_ALL_COURSES = gql`
     query GetAllCourses {
-      courses(first: 3) {
+      courses(first: 10) {
         nodes {
           content
           date
           excerpt
           title
+          slug
           uri
           id
           featuredImage {

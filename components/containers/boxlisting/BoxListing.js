@@ -1,3 +1,4 @@
+import InfoBox from '../../elements/infobox/InfoBox';
 import styles from './BoxListing.module.scss';
 
 const BoxListing = ({ content }) => {
@@ -5,9 +6,7 @@ const BoxListing = ({ content }) => {
     <div className={styles.boxlisting_wrapper}>
         {content.map((cr) => (
           (cr.courseACF.bundle === null) &&
-            <article className={styles.listing_box} key={cr.id}>
-              {cr.title}
-            </article>
+            <InfoBox content={cr} />
         ))}
     </div>
   )

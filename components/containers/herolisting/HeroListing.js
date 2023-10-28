@@ -1,10 +1,10 @@
-import styles from './HeroListing.module.scss';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import Date from '../../elements/date/Date';
-import parse from 'html-react-parser';
-import { Limelight } from 'next/font/google';
+import styles from './HeroListing.module.scss'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useTheme } from 'next-themes'
+import Date from '../../elements/date/Date'
+import parse from 'html-react-parser'
+import { Limelight } from 'next/font/google'
 
 const limelight = Limelight( { 
   weight: ['400'],
