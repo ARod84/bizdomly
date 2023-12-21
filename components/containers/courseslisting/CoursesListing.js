@@ -1,4 +1,4 @@
-import { useState, useEffect, useSyncExternalStore } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './CoursesListing.module.scss';
 import { useTheme } from 'next-themes';
 import { Limelight } from 'next/font/google';
@@ -22,6 +22,7 @@ const CoursesListing = ({courses}) => {
   if (!mounted) {
     return null
   }
+
   return (
     <div className={`${styles.courses_listing} ${theme === 'dark' ? styles.dark : styles.light}`}>
         <h2 className={`${limelight.className} ${styles.courses_title}`}>

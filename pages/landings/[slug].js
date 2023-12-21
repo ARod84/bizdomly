@@ -25,6 +25,7 @@ export async function getStaticProps({ params }) {
       id
       uri
       date
+      databaseId
       featuredImage {
         node {
           sourceUrl
@@ -50,6 +51,14 @@ export async function getStaticProps({ params }) {
           module6
           module7
           module8
+          module1Content
+          module2Content
+          module4Content
+          module3Content
+          module5Content
+          module6Content
+          module7Content
+          module8Content
         }
       }
     }

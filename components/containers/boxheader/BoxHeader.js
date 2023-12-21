@@ -5,10 +5,9 @@ const BoxHeader = ({ feat }) => {
 
   return (
     <div className={styles.boxheader_wrapper}>
-        {feat.map((f, index) => (
-            (f.courseACF?.bundle === true) && 
-              <PriceBox content={f} key={f.id} />
-            ))}
+      {feat.map((f, index) => (
+        (f.courseACF?.bundle === true) && <PriceBox content={f} key={f.id} />
+      ))}
     </div>
   )
 }

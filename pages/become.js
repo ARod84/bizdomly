@@ -18,6 +18,7 @@ export async function getStaticProps() {
           slug
           uri
           id
+          databaseId
           featuredImage {
             node {
               sourceUrl

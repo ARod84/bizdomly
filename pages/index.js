@@ -129,7 +129,6 @@ export async function getStaticProps() {
   const coursesResponse = await client.query({
     query: GET_ALL_COURSES
   })
-
   const courses = coursesResponse?.data?.courses?.nodes;
 
   return {

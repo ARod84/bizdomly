@@ -15,12 +15,17 @@
 
 .infobox_text {
     position: absolute;
-    background: $slate-900;
+    background: $purple-400;
     left: 17rem;
     bottom: 22rem;
     min-width: 38rem;
     border-radius: 2rem;
     padding: 1rem;
+    box-shadow: 14px 14px 44px rgba(0, 0, 0, 0.12);
+}
+
+.dark .infobox_text {
+    background: $slate-900;
 }
 
 .infobox_text h2 {
@@ -28,6 +33,10 @@
     font-size: 2.25rem;
     letter-spacing: 1px;
     margin: 0;
+    color: $slate-900;
+}
+
+.dark .infobox_text h2 {
     color: $slate-100;
 }
 
@@ -43,6 +52,10 @@
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 300;
+    color: $slate-900;
+}
+
+.dark .infobox_text__price span {
     color: $slate-100;
 }
 
@@ -53,7 +66,11 @@
 
 .infobox_text__list li {
     font-size: 0.85rem;
-    color: $slate-100;
+    color: $slate-900;
+}
+
+.dark .infobox_text__list li {
+    color: $slate-900;
 }
 
 .infobox_text__list li svg {
@@ -70,12 +87,21 @@
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     transition: all 800ms;
+    color: $slate-900;
+}
+
+.dark .infobox_addtocart {
+    color: $slate-100;
+}
+
+.dark .infobox_text__list li {
     color: $slate-100;
 }
 
 .infobox_addtocart:hover {
     background: $fucsia-500;
     border: 2px solid $slate-500;
+    color: $slate-100;
 }
 
 /* Landing Body */
@@ -89,6 +115,89 @@
     font-size: 2rem;
     letter-spacing: 1px;
     margin: 0;
-    color: $slate-100;
+    color: $slate-900;
     border-bottom: 2px solid $fucsia-500;
+}
+
+.dark .landing_modules h2 {
+    color: $slate-100;
+}
+
+.landing_sinopsis {
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing_sinopsis img {
+    border-radius: 16px;
+    width: 44%;
+    object-fit: cover;
+}
+
+.landing_sinopsis__text h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 0 0 2rem 0;
+    color: $slate-900;
+    line-height: 1.5em;
+}
+
+.dark .landing_sinopsis__text h2 {
+    color: $slate-100;
+}
+
+.landing_sinopsis__text {
+    max-width: 50%;
+}
+
+.landing_sinopsis__cta_wrapper {
+    background: $biz-gradient;
+    padding: 3px;
+    border: none;
+    border-radius: 40px;
+    transition: all 800ms;
+}
+
+.landing_sinopsis__cta_wrapper:hover {
+    background-size: 0 0.1em, 100% 0.1em;
+    cursor: pointer;
+}
+
+a.landing_sinopsis__cta {
+    color: $slate-100;
+}
+
+a.landing_sinopsis__cta {
+    background: $slate-500;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 40px;
+    color: $slate-100;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    transition: all 800ms;
+}
+
+.landing_sinopsis__cta:hover {
+    background: transparent;
+}
+
+.landing_faq h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 0 0 2rem 0;
+    color: $slate-900;
+    line-height: 1.5em;
+    border-bottom: 2px solid $fucsia-500;
+}
+
+.dark .landing_faq h2 {
+    color: $slate-100;
 }

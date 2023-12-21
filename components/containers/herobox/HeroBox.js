@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { Limelight } from 'next/font/google';
 import Link from 'next/link';
 import styles from './HeroBox.module.scss';
@@ -11,6 +13,16 @@ const limelight = Limelight( {
 });
 
 export default function HeroBox ({ insights }) {
+  const [mounted, setMounted] = useState();
+  const {theme} = useTheme();
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
   
   const title   = insights[0].title;
   const excerptLen = insights[0].excerpt;
@@ -19,7 +31,7 @@ export default function HeroBox ({ insights }) {
   const uri = insights[0].uri;
 
   return (
-    <section className={styles.hero_wrapper}>
+    <section className={`${styles.hero_wrapper} ${theme === 'dark' ? styles.dark : styles.light}`}>
       <div className={styles.overlay}></div>
       <div className={styles.hero_inner}>
         <img src='/images/hero.jpg' alt='Hero image' />

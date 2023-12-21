@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import styles from './InfoBox.module.scss'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -5,8 +7,19 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
 const InfoBox = ({ content }) => {
+  const [mounted, setMounted] = useState();
+  const {theme} = useTheme();
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
-    <article className={styles.infobox_wrapper}>
+    <article className={`${styles.infobox_wrapper} ${theme === 'dark' ? styles.dark : styles.light}`}>
       <div className={styles.infobox_wrapper__inner}>
         <div className={styles.infobox_image}>
           <Image src={content.featuredImage?.node.sourceUrl} width='228' height='228' />

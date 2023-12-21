@@ -16,12 +16,17 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    background: $slate-900;
+    background: #fff;
     left: 12rem;
     top: 2.5rem;
     min-width: 38rem;
     border-radius: 2rem;
     padding: 1rem;
+    box-shadow: 14px 14px 44px rgba(0, 0, 0, 0.12);
+}
+
+.dark .infobox_wrapper__inner {
+    background: $slate-900;
 }
 
 .infobox_image img {
@@ -31,10 +36,17 @@
 }
 
 .infobox_text h2 {
+    margin: 0;
+}
+
+.infobox_text h2 a {
     font-family: 'Inter', sans-serif;
     font-size: 1.25rem;
     letter-spacing: 1px;
     margin: 0;
+}
+
+.dark.infobox_text h2 a {
     color: $slate-100;
 }
 
@@ -50,6 +62,10 @@
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 300;
+    color: $slate-900;
+}
+
+.dark .infobox_text__price span {
     color: $slate-100;
 }
 
@@ -60,6 +76,10 @@
 
 .infobox_text__list li {
     font-size: 0.85rem;
+    color: $slate-900;
+}
+
+.dark .infobox_text__list li {
     color: $slate-100;
 }
 
@@ -77,10 +97,19 @@
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
     transition: all 800ms;
+    color: $slate-900;
+}
+
+.dark .infobox_addtocart {
+    color: $slate-100;
+}
+
+.dark .infobox_addtocart:hover {
     color: $slate-100;
 }
 
 .infobox_addtocart:hover {
     background: $fucsia-500;
     border: 2px solid $slate-500;
+    color: $slate-100;
 }

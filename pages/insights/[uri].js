@@ -45,7 +45,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths(){
+export async function getStaticPaths() {
   const paths = []
   return {
       paths,

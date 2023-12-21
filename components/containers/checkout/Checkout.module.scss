@@ -1,0 +1,95 @@
+@import '../../../styles/variables.module.scss';
+
+.checkout_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    margin: 0 auto;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    border: 2px solid $purple-400;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+}
+
+.dark.checkout_wrapper {
+    background: $slate-900;
+}
+
+.checkout_title {
+    font-size: 2rem;
+    font-weight: 800;
+    align-self: flex-start;
+    width: 14rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.checkout_course__title {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.checkout_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.checkout_details small {
+    font-style: italic;
+    color: $slate-900;
+    font-size: 0.85rem;
+}
+
+.dark .checkout_details small {
+    color: $slate-400;
+}
+
+.checkout_details p {
+    color: $slate-900;
+    font-size: 1.15rem;
+    align-self: flex-end;
+    font-weight: 600;
+}
+
+.dark .checkout_details p {
+    color: $slate-400;
+}
+
+.checkout_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.checkout_form input {
+    background-color: #fff;
+    border: 2px solid $slate-800;
+    padding: 1rem 1.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.dark .checkout_form input {
+    background-color: $slate-900;
+    border: 2px solid $slate-800;
+}
+
+.checkout_form label {
+    color: $slate-900;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.dark .checkout_form label {
+    color: $slate-400;
+}
