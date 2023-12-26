@@ -5,3 +5,17 @@
     justify-content: center;
     gap: 2rem;
 }
+
+@media(min-width: 320px) {
+    .boxheader_wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .boxheader_wrapper {
+        flex-direction: row;
+    }
+}

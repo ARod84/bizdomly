@@ -2,7 +2,7 @@ import PriceBox from '../../elements/pricebox/PriceBox';
 import styles from './BoxHeader.module.scss';
 
 const BoxHeader = ({ feat }) => {
-
+  
   return (
     <div className={styles.boxheader_wrapper}>
       {feat.map((f, index) => (

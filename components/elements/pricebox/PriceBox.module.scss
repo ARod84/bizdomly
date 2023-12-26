@@ -159,3 +159,19 @@ a.pricebox_cta__button {
 .pricebox_cta__button:hover {
     background: transparent;
 }
+
+@media(min-width: 320px) {
+    .pricebox_title_wrapper {
+        padding: 0 1rem;
+    }
+    .pricebox_title__title {
+        font-size: 1.1rem;
+    }
+    .pricebox_title__price {
+        font-size: 1.25rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    
+}

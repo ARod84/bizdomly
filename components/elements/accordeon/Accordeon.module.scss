@@ -47,3 +47,15 @@
 .accordeon_modules__itemContent.close {
     display: none;
 }
+
+@media (min-width: 320px) {
+    .accordeon_modules__item h3 {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .accordeon_modules__item h3 {
+        font-size: 1rem;
+    }
+}

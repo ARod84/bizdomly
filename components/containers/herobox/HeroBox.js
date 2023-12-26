@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
-import { Limelight } from 'next/font/google';
-import Link from 'next/link';
-import styles from './HeroBox.module.scss';
-import parse from 'html-react-parser';
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { Limelight } from 'next/font/google'
+import Link from 'next/link'
+import styles from './HeroBox.module.scss'
+import parse from 'html-react-parser'
 
 const limelight = Limelight( { 
   weight: ['400'],
@@ -13,8 +13,8 @@ const limelight = Limelight( {
 });
 
 export default function HeroBox ({ insights }) {
-  const [mounted, setMounted] = useState();
-  const {theme} = useTheme();
+  const [mounted, setMounted] = useState()
+  const {theme} = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -27,7 +27,7 @@ export default function HeroBox ({ insights }) {
   const title   = insights[0].title;
   const excerptLen = insights[0].excerpt;
   const tag = insights[0].insightsACF.tagline;
-  const excerpt = excerptLen.substring(0, 140) + '...';
+  const excerpt = excerptLen.substring(0, 140) + '...'
   const uri = insights[0].uri;
 
   return (

@@ -3,13 +3,13 @@ import { useTheme } from 'next-themes'
 // Responsive resources
 import { useMediaQuery } from 'react-responsive'
 import { device } from '../../../utils/mediaqueries.js'
-import styles from './InfoBox.module.scss'
+import styles from './InfoBoxMobile.module.scss'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
-const InfoBox = ({ content }) => {
+const InfoBoxMobile = ({ content }) => {
   const [mounted, setMounted] = useState()
   const {theme} = useTheme()
 
@@ -65,4 +65,4 @@ const InfoBox = ({ content }) => {
   )
 }
 
-export default InfoBox
+export default InfoBoxMobile

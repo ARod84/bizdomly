@@ -3,6 +3,9 @@ import Layout from '../components/layout/Layout';
 import Link from 'next/link';
 import parse from 'html-react-parser';
 import Image from 'next/image';
+// Responsive resources
+import { useMediaQuery } from 'react-responsive'
+import { device } from '../utils/mediaqueries'
 import { client } from '../lib/apollo';
 import { gql } from '@apollo/client';
 import styles from '../styles/Pages.module.scss';
@@ -53,6 +56,8 @@ export async function getStaticProps() {
 }
 
 const news = ({ allPosts }) => {
+  // Media queries and devices
+  const isLaptop = useMediaQuery({ query: device.laptop })
 
   function NextArrow(props) {
     const { onClick } = props;
@@ -107,6 +112,7 @@ const news = ({ allPosts }) => {
     </Head>
     <Layout>
         <section className={styles.page_wrapper}>
+            {isLaptop &&
             <Slider {...settings} className={styles.bizslider}>
               {allPosts.map((ins, index) => (
                 index < 6 && 
@@ -123,17 +129,26 @@ const news = ({ allPosts }) => {
                     <h3>{ins.title} {ins.categories.nodes[0] ? <span>{ins.categories.nodes[0].name}</span> : ''}</h3>
                   </Link>
               ))}
-            </Slider>
+            </Slider>}
             <div className={styles.article_listing}>
                 {allPosts.map((ins, index) => (
                   index === 0 && 
                   <Link  className={styles.main_article} key={ins.id} href={`/news/${ins.uri}`}>
                     <div className={styles.overlay}></div>
-                    <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
-                      alt={`${ins.featuredImage ? ins.featuredImage.node.altText : ''}`}
-                      fill={true}
-                    />
+                    {isLaptop ? (
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        alt={`${ins.featuredImage ? ins.featuredImage.node.altText : ''}`}
+                        fill={true}
+                      /> 
+                    ):( 
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        alt={`${ins.featuredImage ? ins.featuredImage.node.altText : ''}`}
+                        width='620'
+                        height='400'
+                      /> 
+                    )}
                     <h3>
                       {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
@@ -142,17 +157,24 @@ const news = ({ allPosts }) => {
                       : 
                         ''}
                     </h3>
-                    {parse(ins.excerpt)}
+                    {isLaptop ? parse(ins.excerpt) : parse(ins.excerpt.substring(0, 140))}
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
                   index === 1 && 
                   <Link href={`/news/${ins.uri}`} className={styles.fst_article} key={ins.id}>
                     <div className={styles.overlay}></div>
-                    <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
-                      fill={true}
-                    />
+                    {isLaptop ? (
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        fill={true}
+                      />
+                    ):(
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        width='200'
+                        height='189'
+                      />)}
                     <h3>
                       {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
@@ -167,10 +189,18 @@ const news = ({ allPosts }) => {
                   index === 2 && 
                   <Link href={`/news/${ins.uri}`} className={styles.scnd_article} key={ins.id}>
                     <div className={styles.overlay}></div>
-                    <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
-                      fill={true}
-                    />
+                    {isLaptop ? (
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        fill={true}
+                      />
+                    ):(
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        width='200'
+                        height='189'
+                      />
+                    )}
                     <h3>
                       {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
@@ -185,10 +215,18 @@ const news = ({ allPosts }) => {
                   index === 3 && 
                   <Link href={`/news/${ins.uri}`} className={styles.thrd_article} key={ins.id}>
                     <div className={styles.overlay}></div>
-                    <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
-                      fill={true}
-                    />
+                    {isLaptop ? (
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        fill={true}
+                      />
+                    ):(
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        width='200'
+                        height='189'
+                      />
+                    )}
                     <h3>
                       {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
@@ -203,17 +241,25 @@ const news = ({ allPosts }) => {
                   index === 4 && 
                   <Link href={`/news/${ins.uri}`} className={styles.frth_article} key={ins.id}>
                     <div className={styles.overlay}></div>
-                    <Image
-                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
-                      fill={true}
-                    />
+                    {isLaptop ? (
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        fill={true}
+                      />
+                    ):(
+                      <Image
+                        src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                        width='200'
+                        height='189'
+                      />
+                    )}
                     <h3>
                       {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
                           {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                ''}
+                      ''}
                     </h3>
                   </Link>
                 ))}
@@ -221,17 +267,25 @@ const news = ({ allPosts }) => {
                   index === 5 && 
                   <Link href={`/news/${ins.uri}`} className={styles.fth_article} key={ins.id}>
                     <div className={styles.overlay}></div>
+                    {isLaptop ? (
                     <Image
                       src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
                       fill={true}
+                    /> 
+                    ):(
+                    <Image
+                      src={`${ins.featuredImage ? ins.featuredImage.node.sourceUrl : '/images/mano-tengo-fe.jpg'}`}
+                      width='620'
+                      height='189'
                     />
+                    )}
                     <h3>
                       {ins.title} {ins.categories.nodes[0] ? 
                         <span className={styles.cat_tag}>
                           {ins.categories.nodes[0].name}
                         </span> 
                       : 
-                ''}
+                    ''}
                     </h3>
                   </Link>
                 ))}

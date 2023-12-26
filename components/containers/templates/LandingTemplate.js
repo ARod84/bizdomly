@@ -67,7 +67,7 @@ const LandingTemplate = ({ postData }) => {
             </Link>
           </button>
         </div>
-        <Image src='/images/course-landing.jpg' width='450' height='350' />
+        <Image src='/images/solopreneur-remote.jpg' width='450' height='350' />
       </section>
       <section className={styles.landing_faq}>
         <h2>Frequently Asked Questions</h2>

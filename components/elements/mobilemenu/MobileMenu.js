@@ -35,13 +35,13 @@ const MobileMenu = () => {
           <span className={styles.menu_close} onClick={handleClose}>
               <FontAwesomeIcon icon={faTimes} />
           </span>
-          <Link href='/'>
+          <Link href='/insights'>
             Insights
           </Link>
-          <Link href='/'>
+          <Link href='/news'>
             News
           </Link>
-          <Link href='/'>
+          <Link href='/become'>
             Become a Business Owner
           </Link>
       </nav>

@@ -113,3 +113,41 @@
     border: 2px solid $slate-500;
     color: $slate-100;
 }
+
+@media(min-width: 320px) {
+    .infobox_wrapper {
+        background-image: unset;
+        width: 100%;
+        height: 12rem;
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+    .infobox_wrapper__inner {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        background: #fff;
+        left: 1rem;
+        top: 2rem;
+    }
+    .infobox_image img {
+        transform: translateX(-12%);
+    }
+}
+
+@media (min-width: 1024px) {
+    .infobox_wrapper {
+        position: relative;
+        background-image: linear-gradient(to right, rgba(147, 51, 234, 0.75), rgba(147, 51, 234, 0.5)), url(../../../public/images/courses.jpg);
+        background-position: center right;
+        background-size: cover;
+        background-repeat: repeat;
+        width: 22rem;
+        height: 20rem;
+        margin-bottom: 4rem;
+        border-radius: 2rem;
+    }
+    .infobox_wrapper__inner {
+        left: 12rem;
+    }
+}

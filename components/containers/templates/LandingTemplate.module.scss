@@ -2,10 +2,11 @@
 
 .landing_hero {
     width: 100%;
-    height: 66vh;
-    background-image: url(../../../public/images/course-landing.jpg);
+    height: 76vh;
+    background-image: url(../../../public/images/solopreneur.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center top;
+    position: relative;
 }
 
 .landing_body {
@@ -18,7 +19,7 @@
     background: $purple-400;
     left: 17rem;
     bottom: 22rem;
-    min-width: 38rem;
+    width: 38rem;
     border-radius: 2rem;
     padding: 1rem;
     box-shadow: 14px 14px 44px rgba(0, 0, 0, 0.12);
@@ -200,4 +201,117 @@ a.landing_sinopsis__cta {
 
 .dark .landing_faq h2 {
     color: $slate-100;
+}
+
+@media(min-width: 320px) {
+    .infobox_text {
+        left: 1rem;
+        bottom: 2.5rem;
+        width: 18rem;
+    }
+    .infobox_text h2 {
+        font-size: 1.35rem;
+        margin-bottom: .5rem;
+    }
+    .infobox_text__price {
+        width: 60%;
+    }
+    .infobox_text__price span {
+        font-size: 0.95rem;
+    }
+    .infobox_text__list {
+        margin: 0.5rem 0;
+    }
+    .landing_modules,
+    .landing_sinopsis,
+    .landing_faq {
+        padding: 4rem 1rem 1rem 1rem;
+    }
+    .landing_modules h2 {
+        font-size: 1.25rem;
+    }
+    .landing_sinopsis__text {
+        max-width: 100%;
+    }
+    .landing_sinopsis {
+        flex-direction: column;
+    }
+    .landing_sinopsis img {
+        display: none;
+    }
+    .landing_sinopsis__text h2 {
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+    }
+    .landing_faq h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media(min-width: 768px) {
+    .infobox_text {
+        left: 2.5rem;
+        width: 30rem;
+    }
+    .infobox_text h2 {
+        font-size: 1.5rem;
+    }
+    .infobox_text__price {
+        width: 40%;
+    }
+    .landing_modules,
+    .landing_sinopsis,
+    .landing_faq {
+        padding: 4rem 2.5rem 2.5rem 2.5rem;
+    }
+    .landing_sinopsis {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .landing_sinopsis img {
+        display: block;
+        max-width: 50%;
+        border-radius: 8px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .infobox_text {
+        bottom: 5rem;
+        width: 38rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .infobox_text {
+        left: 17rem;
+        bottom: 5rem;
+        width: 38rem;
+    }
+    .infobox-text h2 {
+        font-size: 2.25rem;
+    }
+    .landing_modules,
+    .landing_sinopsis,
+    .landing_faq {
+        padding: 6rem 0;
+    }
+    .landing_modules h2 {
+        font-size: 2rem;
+    }
+    .infobox_text h2 {
+        font-size: 2.25rem;
+    }
+    .infobox_text__price {
+        width: 28%;
+    }
+    .landing_sinopsis__text {
+        max-width: 50%;
+    }
+    .landing_sinopsis__text h2 {
+        font-size: 2rem;
+    }
+    .landing_faq h2 {
+        font-size: 2rem;
+    }
 }

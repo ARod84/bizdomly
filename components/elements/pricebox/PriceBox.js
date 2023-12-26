@@ -61,7 +61,7 @@ const PriceBox = ({
           {content.courseACF.feature5}
         </li>
         <button className={styles.pricebox_cta__wrapper}>
-          <Link href='#'  className={styles.pricebox_cta__button}>
+          <Link href={`/checkout/${content.id}`}  className={styles.pricebox_cta__button}>
             Start now!
           </Link>
         </button>

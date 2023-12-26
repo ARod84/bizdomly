@@ -27,6 +27,10 @@
     height: 100vh;
     width: 100vw;
     /*animation: slide 0.55s ease;*/
+    a {
+        line-height: 2em;
+        font-size: 1.25rem;
+    }
     &.dark {
         background-color: $slate-950;
         color: $slate-100;
