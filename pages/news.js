@@ -59,6 +59,12 @@ const news = ({ allPosts }) => {
   // Media queries and devices
   const isLaptop = useMediaQuery({ query: device.laptop })
 
+  function excerpt(exc, ln) {
+    let re = parse(exc.substring(0, ln))
+    let rex = `${re?.props?.children}...`
+    return <p>{rex}</p>
+  }
+
   function NextArrow(props) {
     const { onClick } = props;
     return (
@@ -157,7 +163,7 @@ const news = ({ allPosts }) => {
                       : 
                         ''}
                     </h3>
-                    {isLaptop ? parse(ins.excerpt) : parse(ins.excerpt.substring(0, 140))}
+                    {isLaptop ?  excerpt(ins.excerpt, 250) : excerpt(ins.excerpt, 140)}
                   </Link>
                 ))}
                 {allPosts.map((ins, index) => (
