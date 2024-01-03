@@ -1,12 +1,11 @@
 import React from 'react'
 import { gql } from '@apollo/client'
-import { client } from '../../lib/apollo'
+import { publicClient } from '../../lib/apollo'
 import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Checkout from '../../components/containers/checkout/Checkout'
 
 const CheckoutPage = ({ course, paypalDetails }) => {
-
   return (
     <React.Fragment>
       <Head>
@@ -42,7 +41,7 @@ export async function getStaticProps({ params }) {
       }
   `
 
-  const response = await client.query({
+  const response = await publicClient.query({
     query: GET_COURSE,
     variables: {
       id: params.id
@@ -51,7 +50,7 @@ export async function getStaticProps({ params }) {
 
   const course = response?.data?.course
 
-  const response2 = await client.query({
+  const response2 = await publicClient.query({
     query: GET_PAYPAL_DETAILS
   })
 
