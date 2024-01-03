@@ -6,6 +6,7 @@ import Layout from '../../components/layout/Layout'
 import Checkout from '../../components/containers/checkout/Checkout'
 
 const CheckoutPage = ({ course, paypalDetails }) => {
+
   return (
     <React.Fragment>
       <Head>
@@ -55,7 +56,6 @@ export async function getStaticProps({ params }) {
   })
 
   const paypalDetails = response2?.data
-
   return {
     props: {
       course,

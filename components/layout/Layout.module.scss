@@ -27,6 +27,10 @@
     }
 }
 
+.page {
+    min-height: 68vh;
+}
+
 @media (max-width: $breakpoint-desktop) {
     .home {
         display: grid;

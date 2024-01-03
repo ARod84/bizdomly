@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './PaypalBtn.module.scss'
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 
-const PaypalBtn = ({ paypalDetails, order }) => {
+const PaypalBtn = ({ paypalDetails }) => {
+  const [approve, setApprove] = useState(null)
+  const createPaypalOrder = async () => {
+    const res = await fetch('/api/check', {
+      method: 'POST'
+    })
+    const order = await res.json()
+    return order.id
+  }
 
-  const createPaypalOrder = () => {
-    console.log(order)
-    return order
+  const handleApprove = (data, actions) => {
+    actions.order.capture()
+    setApprove(data?.orderID)
   }
 
   return (
@@ -14,13 +22,23 @@ const PaypalBtn = ({ paypalDetails, order }) => {
       options={{
         clientId: paypalDetails?.paypalClientID
       }}>
+      {!approve ? (
+      <React.Fragment>
+        <h3>Complete your order on PayPal</h3>
         <PayPalButtons 
           style={{
             color: 'black',
             layout: 'horizontal',
           }}
           createOrder={createPaypalOrder}
+          onApprove={handleApprove}
         />
+      </React.Fragment>
+      ):(
+        <p className={styles.approved_text}>
+          Your order is complete, we will email you soon with your course details.
+        </p>
+      )}
     </PayPalScriptProvider>
   )
 }
