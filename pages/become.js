@@ -3,7 +3,7 @@ import BoxListing from '../components/containers/boxlisting/BoxListing';
 import Layout from '../components/layout/Layout';
 import Head from 'next/head';
 import { gql } from '@apollo/client';
-import { client } from '../lib/apollo';
+import { serverClient } from '../lib/apollo';
 
 export async function getStaticProps() {
   
@@ -41,7 +41,7 @@ export async function getStaticProps() {
     }
   `
 
-  const coursesResponse = await client.query({
+  const coursesResponse = await serverClient.query({
     query: GET_ALL_COURSES
   })
 
