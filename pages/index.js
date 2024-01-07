@@ -1,7 +1,7 @@
 'use client';
 
 import Head from 'next/head';
-import { client } from '../lib/apollo';
+import { serverClient } from '../lib/apollo';
 import { gql } from '@apollo/client';
 import Layout, { siteTitle } from '../components/layout/Layout';
 import HeroBox from '../components/containers/herobox/HeroBox';
@@ -111,22 +111,22 @@ export async function getStaticProps() {
     }
   `
 
-  const responseIn = await client.query({
+  const responseIn = await serverClient.query({
     query: GET_INSIGHTS
   })
   const insights = responseIn?.data?.insights?.nodes
 
-  const responseAllIn = await client.query({
+  const responseAllIn = await serverClient.query({
     query: GET_ALL_INSIGHTS
   })
   const allInsights = responseAllIn?.data?.insights?.nodes
 
-  const response = await client.query({
+  const response = await serverClient.query({
     query: GET_POSTS
   })
   const posts = response?.data?.posts?.nodes;
 
-  const coursesResponse = await client.query({
+  const coursesResponse = await serverClient.query({
     query: GET_ALL_COURSES
   })
   const courses = coursesResponse?.data?.courses?.nodes;
