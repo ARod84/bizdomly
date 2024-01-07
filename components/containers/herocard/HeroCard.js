@@ -33,7 +33,6 @@ const HeroCard = ({allInsights}) => {
       {allInsights.map((ins) => (
         <article key={ins.id}>
           <Link href={`${ins.uri}`}>
-            {console.log(ins.uri)}
           <h3 className={`${styles.card_listing__title} ${limelight.className}`}>
             <span className={styles.card_underline}>
               {ins.title}

@@ -2,11 +2,19 @@ import React, { useState } from 'react'
 import styles from './PaypalBtn.module.scss'
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 
-const PaypalBtn = ({ paypalDetails }) => {
+const PaypalBtn = ({ 
+  paypalDetails,
+  purchaseDetails
+}) => {
   const [approve, setApprove] = useState(null)
   const createPaypalOrder = async () => {
     const res = await fetch('/api/check', {
-      method: 'POST'
+      method: 'POST',
+      body: JSON.stringify({
+        price: purchaseDetails.courseACF.price, 
+        name: purchaseDetails.title,
+        description: purchaseDetails.databaseId
+      })
     })
     const order = await res.json()
     return order.id
@@ -29,9 +37,13 @@ const PaypalBtn = ({ paypalDetails }) => {
           style={{
             color: 'black',
             layout: 'horizontal',
+            shape: 'rect',
+            tagline: 'false',
+            height: 40
           }}
           createOrder={createPaypalOrder}
           onApprove={handleApprove}
+          className={styles.paypal_btn}
         />
       </React.Fragment>
       ):(

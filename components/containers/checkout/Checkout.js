@@ -87,7 +87,7 @@ const Checkout = ({ course, paypalDetails }) => {
       createOrder({
         variables: values
       }).catch(error => {
-        console.error(error)
+        let err = error
       })
     }
   }
@@ -128,7 +128,10 @@ const Checkout = ({ course, paypalDetails }) => {
           </div>
         </form>
       ):(
-        <PaypalBtn paypalDetails={paypalDetails} /> 
+        <PaypalBtn 
+          paypalDetails={paypalDetails} 
+          purchaseDetails={course} 
+        /> 
       )}
     </div>
   )

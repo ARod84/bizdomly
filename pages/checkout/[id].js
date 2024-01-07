@@ -55,6 +55,7 @@ export async function getStaticProps({ params }) {
   })
 
   const paypalDetails = response2?.data
+  
   return {
     props: {
       course,
