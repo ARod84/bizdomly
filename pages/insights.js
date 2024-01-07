@@ -6,7 +6,7 @@ import Image from 'next/image';
 // Responsive resources
 import { useMediaQuery } from 'react-responsive';
 import { device } from '../utils/mediaqueries';
-import { client } from '../lib/apollo';
+import { serverClient } from '../lib/apollo';
 import { gql } from '@apollo/client';
 import styles from '../styles/Pages.module.scss';
 import Slider from "react-slick";
@@ -46,7 +46,7 @@ export async function getStaticProps() {
     }
   `
 
-  const responseAllIn = await client.query({
+  const responseAllIn = await serverClient.query({
     query: GET_ALL_INSIGHTS
   })
   const allInsights = responseAllIn?.data?.insights?.nodes
