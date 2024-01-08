@@ -1,6 +1,6 @@
 import React from 'react'
 import { gql } from '@apollo/client'
-import { client } from '../../lib/apollo'
+import { serverClient } from '../../lib/apollo'
 import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Checkout from '../../components/containers/checkout/Checkout'
@@ -41,7 +41,7 @@ export async function getStaticProps({ params }) {
       }
   `
 
-  const response = await client.query({
+  const response = await serverClient.query({
     query: GET_COURSE,
     variables: {
       id: params.id

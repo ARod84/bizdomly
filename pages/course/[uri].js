@@ -1,6 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import PostTemplate from '../../components/containers/templates/PostTemplate';
-import { client } from '../../lib/apollo';
+import { serverClient } from '../../lib/apollo';
 import { gql } from '@apollo/client';
 
 export default function Course({ course }) {
@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
   }
   `
 
-  const response = await client.query({
+  const response = await serverClient.query({
     query: GET_COURSE,
     variables: {
       id: params.uri

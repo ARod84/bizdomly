@@ -1,6 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import PostTemplate from '../../components/containers/templates/PostTemplate';
-import { client } from '../../lib/apollo';
+import { serverClient } from '../../lib/apollo';
 import { gql } from '@apollo/client';
 
 export default function Post({ insight }) {
@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
   }
   `
 
-  const response = await client.query({
+  const response = await serverClient.query({
     query: GET_POST,
     variables: {
       id: params.uri

@@ -1,6 +1,6 @@
 import Layout from '../../components/layout/Layout';
 import LandingTemplate from '../../components/containers/templates/LandingTemplate';
-import { client } from '../../lib/apollo';
+import { serverClient } from '../../lib/apollo';
 import { gql } from '@apollo/client';
 import AppHeader from '../../components/containers/header/AppHeader';
 import AppFooter from '../../components/containers/footer/AppFooter';
@@ -65,7 +65,7 @@ export async function getStaticProps({ params }) {
   }
   `
 
-  const response = await client.query({
+  const response = await serverClient.query({
     query: GET_COURSE,
     variables: {
       id: params.slug
